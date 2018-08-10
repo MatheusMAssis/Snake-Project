@@ -39,7 +39,7 @@ def draw():
         snake.coordinates()
         fruit.draw_fruit()
         if [fruit.x, fruit.y] in snake.hist:
-            fruit.new_pos()
+            fruit.new_pos
         
         #determine if it has eaten a fruit or not
         if snake.eat(fruit.x, fruit.y):
