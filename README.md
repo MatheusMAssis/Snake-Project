@@ -1,4 +1,4 @@
-# snake.py
+# SNAKE
 #### created by: Matheus de Moncada Assis
 
 * Done in processing.py using two classes and a main code;
