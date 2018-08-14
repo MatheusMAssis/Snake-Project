@@ -28,12 +28,12 @@ def draw():
         text('developed by: Matheus de Moncada Assis', width/2, 20)
     
     #starting the game if mouse is pressed
-    if mousePressed == True:
+    if mousePressed:
         if mouseX < width and mouseY < height:
             start = False
     
     #drawing fruit and snake
-    if start == False:
+    if not start:
         background(0)
         snake.draw_snake()
         snake.coordinates()
@@ -47,7 +47,7 @@ def draw():
             fruit.draw_fruit()
         
         #determine if it is dead or not
-        if snake.x < 0 or snake.x > width or snake.y < 0 or snake.y > height or snake.death() == True:
+        if snake.x < 0 or snake.x > width or snake.y < 0 or snake.y > height or snake.death():
             fill(255,255,255,200)
             rect(0,0,width,height)
             textSize(40)
@@ -60,11 +60,11 @@ def draw():
     
 #changing snake directions
 def keyPressed():
-    if keyCode == UP:
+    if keyCode == UP and snake.dy != 1:
         snake.direction(0,-1)
-    elif keyCode == DOWN:
+    elif keyCode == DOWN and snake.dy != -1:
         snake.direction(0,1)
-    elif keyCode == RIGHT:
+    elif keyCode == RIGHT and snake.dx != -1:
         snake.direction(1,0)
-    elif keyCode == LEFT:
+    elif keyCode == LEFT and snake.dx != 1:
         snake.direction(-1,0)
